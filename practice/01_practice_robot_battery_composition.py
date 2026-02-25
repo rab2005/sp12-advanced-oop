@@ -21,4 +21,12 @@ This problem explores composition, where one object creates and owns another.
 3. Add a check_power(self) method that returns a string such as:
    "Battery at 100% — ready for action!"
 '''
-
+class Battery:
+   def __init__(self, charge_percent=100):
+        self.charge_percent = charge_percent
+class Robot:
+   def __init__(self):
+       self.battery = Battery()
+   def check_power(self):
+       print(f"Battery at {self.battery.charge_percent} ready for action!")
+Robot().check_power()
