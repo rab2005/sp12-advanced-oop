@@ -30,3 +30,26 @@ class Notification:
         print("Generic notification")
 
 # Write your subclasses below this line
+class EmailNotification(Notification):
+    def __init__(self, address):
+        self.address = address
+
+    def send(self):
+        print(f"Sending EMAIL to {self.address}")
+
+
+class SMSNotification(Notification):
+    def __init__(self, number):
+        self.number = number
+
+    def send(self):
+        print(f"Sending SMS to {self.number}")
+
+
+# Create objects
+email = EmailNotification("student@example.com")
+sms = SMSNotification("555-1234")
+
+# Call send()
+email.send()
+sms.send()
